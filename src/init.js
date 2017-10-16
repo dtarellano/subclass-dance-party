@@ -22,11 +22,11 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
-    );
+    let top = $('body').height() * Math.random();
+    let left = $('body').width() * Math.random();
+    let interval = Math.random() * 1000;
+
+    var dancer = new dancerMakerFunction(top, left, interval);
     $('body').append(dancer.$node);
   });
 });
