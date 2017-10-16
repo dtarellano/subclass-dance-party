@@ -1,6 +1,6 @@
 // Creates and returns a new dancer object that can step
 var makeDancer = function(top, left, timeBetweenSteps) {
-  debugger;
+
   this.top = top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
@@ -16,7 +16,10 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 makeDancer.prototype.step = function() {
     // the basic dancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
-  setTimeout(this.step, this.timeBetweenSteps);
+  var thisContext = this;
+  setTimeout(function() {
+    thisContext.step();
+  }, this.timeBetweenSteps);
 }; 
 
 makeDancer.prototype.setPosition = function(top, left) {
