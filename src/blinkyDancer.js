@@ -1,7 +1,7 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.setPosition(this.color, this.top, this.left);
-
+  this.$node.addClass('blinky');
 };
 
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);

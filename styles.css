@@ -25,17 +25,22 @@ body, a:link, a:visited, a:active{
 }
 .dancer{
   z-index: 1;
-  border:10px solid red;
-  border-radius:20px;
-  height: 20px;
-  width: 20px;
+  border-radius: 40px;
+  height: 40px;
+  width: 40px;
   position:absolute;
 }
 
 .big {
-  height: 60px;
-  width: 60px;
-  border-radius: 60px;
+  height: 70px;
+  width: 70px;
+  border-radius: 70px;
+}
+
+.small {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
 }
 
 #dancefloor {

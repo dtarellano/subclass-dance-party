@@ -64,5 +64,9 @@ $(document).ready(function() {
   $('#dancefloor').on('mouseleave', '.dancer', function(event) {
     $(this).removeClass('big');
   });
-});
+  
+  $('#dancefloor').on('click', '.shaky', function(event) {
+    $('.shaky').toggleClass('small');
+  });
 
+});

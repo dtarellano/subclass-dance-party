@@ -2,7 +2,7 @@ var makeJumpyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.color = 'blue';  
   this.setPosition(this.color, this.top, this.left);
-  
+  this.$node.addClass('jumpy');
 };
 
 makeJumpyDancer.prototype = Object.create(makeDancer.prototype);
@@ -20,5 +20,4 @@ makeJumpyDancer.prototype.step = function() {
   this.$node.animate({'top': position1}, 100, 'swing', function() {
     $(this).animate({'top': position2}, 100, 'swing');
   });
-  
 };
