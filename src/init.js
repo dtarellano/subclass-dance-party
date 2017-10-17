@@ -22,12 +22,25 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var top = $('body').innerHeight() * Math.random();
-    var left = $('body').innerWidth() * Math.random();
+    var topRandom = Math.random();
+    var leftRandom = Math.random();
+    
+    var randomFix = function(topOrLeft) {
+      if (topOrLeft > .9) {
+        topOrLeft = 0.9;
+      } else if (topOrLeft < .1) {
+        topOrLeft = 0.1;
+      }
+      return topOrLeft;
+    };
+    
+    var top = $('body').height() * randomFix(topRandom);
+    var left = $('body').width() * randomFix(leftRandom);
+    
     var interval = Math.random() * 1000;
 
     var dancer = new dancerMakerFunction(top, left, interval);
-    $('body').append(dancer.$node);
+    $('#dancefloor').append(dancer.$node);
   });
 });
 
