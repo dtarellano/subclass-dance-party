@@ -11,10 +11,3 @@ makeBlinkyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
   this.$node.toggle();
 };
-
-makeBlinkyDancer.prototype.makeBig = function() {
-  var node = this.$node[0];
-  node.addEventListener('click', function() {
-    node.setPosition('pink', top, left);
-  });
-};

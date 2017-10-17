@@ -43,6 +43,10 @@ body, a:link, a:visited, a:active{
   border-radius: 20px;
 }
 
+.newColor {
+  background: 'pink';
+}
+
 #dancefloor {
   z-index: 0;
   position: relative;

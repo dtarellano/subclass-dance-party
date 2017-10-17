@@ -68,5 +68,9 @@ $(document).ready(function() {
   $('#dancefloor').on('click', '.shaky', function(event) {
     $('.shaky').toggleClass('small');
   });
+  
+  $('#dancefloor').on('click', '.blinky', function(event) {
+    $('.blinky').css({'background-color': 'pink'});
+  });
 
 });
