@@ -17,7 +17,7 @@ makeJumpyDancer.prototype.step = function() {
   var position2 = this.top + 30;
   position2 = position2.toString() + 'px';
 
-  this.$node.animate({'top': position1}, 200, 'swing', function() {
-    $(this).animate({'top': position2}, 200, 'swing');
+  this.$node.animate({'top': position1}, 100, 'swing', function() {
+    $(this).animate({'top': position2}, 100, 'swing');
   });
 };
