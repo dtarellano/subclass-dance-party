@@ -41,6 +41,8 @@ $(document).ready(function() {
 
     var dancer = new dancerMakerFunction(top, left, interval);
     $('#dancefloor').append(dancer.$node);
+    debugger;
+    window.dancers.push(dancer);
   });
 });
 
