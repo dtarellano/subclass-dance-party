@@ -41,7 +41,7 @@ $(document).ready(function() {
 
     var dancer = new dancerMakerFunction(top, left, interval);
     $('#dancefloor').append(dancer.$node);
-    debugger;
+    console.log($('.dancer'));
     window.dancers.push(dancer);
   });
   
@@ -55,6 +55,14 @@ $(document).ready(function() {
       window.dancers[i].left = left;
       window.dancers[i].setPosition(this.color, top, left);
     }
+  });
+    
+  $('#dancefloor').on('mouseenter', '.dancer', function(event) {
+    $(this).addClass('big');
+  });
+  
+  $('#dancefloor').on('mouseleave', '.dancer', function(event) {
+    $(this).removeClass('big');
   });
 });
 
