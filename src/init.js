@@ -22,8 +22,8 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var top = $('body').height() * Math.random();
-    var left = $('body').width() * Math.random();
+    var top = $('body').innerHeight() * Math.random();
+    var left = $('body').innerWidth() * Math.random();
     var interval = Math.random() * 1000;
 
     var dancer = new dancerMakerFunction(top, left, interval);
