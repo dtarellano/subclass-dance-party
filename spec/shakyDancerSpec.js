@@ -13,9 +13,9 @@ describe('shakyDancer', function() {
   });
 
   it('should have a step function that makes its node shake', function() {
-    sinon.spy(shakyDancer.$node, 'toggle'); //change this away from toggle
+    sinon.spy(shakyDancer.$node, 'animate'); 
     shakyDancer.step();
-    expect(shakyDancer.$node.toggle.called).to.be.true; //change this away from toggle
+    expect(shakyDancer.$node.animate.called).to.be.true;
   });
 
   describe('dance', function() {
