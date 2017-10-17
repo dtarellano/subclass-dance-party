@@ -44,5 +44,16 @@ $(document).ready(function() {
     debugger;
     window.dancers.push(dancer);
   });
+  
+  $('.lineUpButton').on('click', function(event) { 
+    var top = 400;
+    var left = 20;
+    
+    for (var i = 0; i < window.dancers.length; i++) {
+      left += 30;
+      window.dancers[i].setPosition(this.color, top, left);
+      
+    }
+  });
 });
 
