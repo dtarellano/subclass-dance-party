@@ -1,5 +1,8 @@
 var makeShakyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
+  this.color = 'green';  
+  this.setPosition(this.color, this.top, this.left);
+  
 };
 
 makeShakyDancer.prototype = Object.create(makeDancer.prototype);
