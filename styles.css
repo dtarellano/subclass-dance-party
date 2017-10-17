@@ -12,10 +12,15 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .lineUpButton{
+.title, .addDancerButton, .lineUpButton, .go-back{
   padding:5px 12px;
   float:right;
 }
+
+.go-back {
+  display: none;
+}
+
 .topbar{
   height:32px;
   background-color: #555;

@@ -1,6 +1,15 @@
 $(document).ready(function() {
   window.dancers = [];
 
+  var randomFix = function(topOrLeft) {
+    if (topOrLeft > .9) {
+      topOrLeft = 0.9;
+    } else if (topOrLeft < .1) {
+      topOrLeft = 0.1;
+    }
+    return topOrLeft;
+  };
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -25,15 +34,6 @@ $(document).ready(function() {
     var topRandom = Math.random();
     var leftRandom = Math.random();
     
-    var randomFix = function(topOrLeft) {
-      if (topOrLeft > .9) {
-        topOrLeft = 0.9;
-      } else if (topOrLeft < .1) {
-        topOrLeft = 0.1;
-      }
-      return topOrLeft;
-    };
-    
     var top = $('body').height() * randomFix(topRandom);
     var left = $('body').width() * randomFix(leftRandom);
     
@@ -41,7 +41,6 @@ $(document).ready(function() {
 
     var dancer = new dancerMakerFunction(top, left, interval);
     $('#dancefloor').append(dancer.$node);
-    console.log($('.dancer'));
     window.dancers.push(dancer);
   });
   
@@ -51,10 +50,20 @@ $(document).ready(function() {
     
     for (var i = 0; i < window.dancers.length; i++) {
       left += 30;
-      window.dancers[i].top = top;
-      window.dancers[i].left = left;
       window.dancers[i].setPosition(this.color, top, left);
     }
+    $(this).toggle();
+    $('.go-back').toggle();
+  });
+  
+  $('.go-back').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      var top = $('body').height() * randomFix(Math.random());
+      var left = $('body').width() * randomFix(Math.random());
+      window.dancers[i].setPosition(this.color, top, left);
+    }
+    $(this).toggle();
+    $('.lineUpButton').toggle();
   });
     
   $('#dancefloor').on('mouseenter', '.dancer', function(event) {
