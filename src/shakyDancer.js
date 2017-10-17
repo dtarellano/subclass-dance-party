@@ -17,7 +17,7 @@ makeShakyDancer.prototype.step = function() {
   var position2 = this.left - 5;
   position2 = position2.toString() + 'px';
 
-  this.$node.animate({'left': position1}, this.timeBetweenSteps, 'swing', function() {
-    $(this).animate({'left': position2}, this.timeBetweenSteps);
+  this.$node.animate({'left': position1}, 100, 'swing', function() {
+    $(this).animate({'left': position2}, 100, 'swing');
   });
 };

@@ -11,13 +11,14 @@ makeJumpyDancer.prototype.constructor = makeJumpyDancer;
 makeJumpyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
 
-  var position1 = this.top - 15;
+  var position1 = this.top - 10;
   position1 = position1.toString() + 'px';
 
-  var position2 = this.top + 30;
+  var position2 = this.top + 5;
   position2 = position2.toString() + 'px';
 
   this.$node.animate({'top': position1}, 100, 'swing', function() {
     $(this).animate({'top': position2}, 100, 'swing');
   });
+  
 };

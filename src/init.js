@@ -37,7 +37,7 @@ $(document).ready(function() {
     var top = $('body').height() * randomFix(topRandom);
     var left = $('body').width() * randomFix(leftRandom);
     
-    var interval = Math.random() * 1000;
+    var interval = Math.random() * 200;
 
     var dancer = new dancerMakerFunction(top, left, interval);
     $('#dancefloor').append(dancer.$node);
@@ -51,8 +51,9 @@ $(document).ready(function() {
     
     for (var i = 0; i < window.dancers.length; i++) {
       left += 30;
+      window.dancers[i].top = top;
+      window.dancers[i].left = left;
       window.dancers[i].setPosition(this.color, top, left);
-      
     }
   });
 });
